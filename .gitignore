@@ -1,0 +1,9 @@
+*.suo
+*.user
+.vs
+bin
+obj
+Releases/Build[!!-~]Outputs
+Releases/v*
+/Screenshots
+/TwoFactorQRCodeReader/packages

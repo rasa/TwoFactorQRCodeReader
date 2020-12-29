@@ -1,0 +1,8 @@
+\bin\Release\TwoFactorQRCodeReader.dll
+\packages\
+\obj\
+.user
+.sln
+.suo
+.pdb
+.xml
