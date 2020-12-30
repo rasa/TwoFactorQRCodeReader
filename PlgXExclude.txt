@@ -1,5 +1,5 @@
-\bin\Release\TwoFactorQRCodeReader.dll
 \packages\
+\bin\
 \obj\
 .user
 .sln

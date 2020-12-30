@@ -57,7 +57,8 @@ and provides various entry points for generating them, such as context menu comm
 In contrast, this plugin, TwoFactorQRCodeReader, does not generate OTP codes itself, it only
 populates the values that are used by the native KeePass OTP generation functionality. It is a
 convenient way of entering the necessary data from a QR code, rather than a replacement for the
-whole OTP functionality.
+whole OTP functionality. TwoFactorQRCodeReader can even be uninstalled and the OTP codes that have
+already been set up will continue to work perfectly.
 
 
 Bug Reporting, Questions, Comments, Feedback
