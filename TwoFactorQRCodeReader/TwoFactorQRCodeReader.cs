@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Specialized;
+using System.Drawing;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -10,15 +11,32 @@ using KeePass.Util;
 using KeePass.Util.Spr;
 using KeePassLib;
 using KeePassLib.Collections;
+using KeePassLib.Utility;
 
 namespace TwoFactorQRCodeReader
 {
 	public sealed class TwoFactorQRCodeReaderExt : Plugin
 	{
 		private IPluginHost _host;
+		private Bitmap _icon;
 		public override string UpdateUrl
 		{
 			get { return "sourceforge-version://TwoFactorQRCodeReader/twofactorqrcodereader?-v(%5B%5Cd.%5D%2B)%5C.zip"; }
+		}
+
+		public override Image SmallIcon
+		{
+			get
+			{
+				if (_icon == null)
+				{
+					using(var baseImage = Properties.Resources.ScanQR.ToBitmap())
+					{
+						_icon = (Bitmap)DpiUtil.ScaleImage(baseImage, true);
+					}
+				}
+				return _icon;
+			}
 		}
 
 		public override bool Initialize(IPluginHost host)
@@ -34,7 +52,7 @@ namespace TwoFactorQRCodeReader
 				var readQRCode = new ToolStripMenuItem
 				{
 					Text = Properties.Resources.ReadQRCode,
-					Image = Properties.Resources.ScanQR.ToBitmap(),
+					Image = SmallIcon,
 				};
 				readQRCode.Click += ReadQRcode_Click;
 
