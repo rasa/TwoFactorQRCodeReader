@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AutoTypeShow")]
-[assembly: AssemblyDescription("A plugin to extend AutoType functionality to display entries as well as type them")]
+[assembly: AssemblyTitle("TwoFactorQRCodeReader")]
+[assembly: AssemblyDescription("A plugin to easily create the two-factor authentication parameters used by the KeePass placeholders {HMACOTP} and {TIMEOTP}")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Alex Vallat")]
 [assembly: AssemblyProduct("KeePass Plugin")]
-[assembly: AssemblyCopyright("Copyright © 2014 Alex Vallat")]
+[assembly: AssemblyCopyright("Copyright © Alex Vallat")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.47.0.0")]
+[assembly: AssemblyVersion("0.1.0.0")]
 [assembly: AssemblyFileVersion("0.1.0.0")]
