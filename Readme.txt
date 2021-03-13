@@ -49,7 +49,7 @@ http://sourceforge.net/projects/kpsfupdatechecker
 
 KeePassOTP
 ==========
-This project owes a debt of gratitute and inspiration to https://github.com/Rookiestyle/KeePassOTP
+This project owes a debt of gratitude and inspiration to https://github.com/Rookiestyle/KeePassOTP
 That is a much more powerful and fully featured plugin which you may wish to use in preference to
 this one. The important difference between the two is the KeePassOTP handles OTP generation itself,
 and provides various entry points for generating them, such as context menu commands.
@@ -69,4 +69,5 @@ Bugs can be reported using the issue tracker, for anything else, a discussion fo
 
 Changelog
 ---------
+v0.2 Support inverted QR codes (for dark-theme mangled QR codes)
 v0.1 Initial release

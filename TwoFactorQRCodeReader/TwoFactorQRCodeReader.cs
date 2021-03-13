@@ -1,17 +1,10 @@
-﻿using System;
+﻿using KeePass.Plugins;
+using KeePass.UI;
+using KeePassLib;
+using System;
 using System.Collections.Specialized;
 using System.Drawing;
-using System.Reflection;
-using System.Text.RegularExpressions;
-using System.Threading;
 using System.Windows.Forms;
-using KeePass.Plugins;
-using KeePass.UI;
-using KeePass.Util;
-using KeePass.Util.Spr;
-using KeePassLib;
-using KeePassLib.Collections;
-using KeePassLib.Utility;
 
 namespace TwoFactorQRCodeReader
 {

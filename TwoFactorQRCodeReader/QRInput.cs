@@ -17,12 +17,13 @@ namespace TwoFactorQRCodeReader
 {
 	public partial class QRInput : Form
 	{
-		private BarcodeReader _barcodeReader = new BarcodeReader
+		private readonly BarcodeReader _barcodeReader = new BarcodeReader
 		{
 			Options = new ZXing.Common.DecodingOptions
 			{
 				PossibleFormats = new List<BarcodeFormat> { BarcodeFormat.QR_CODE }
-			}
+			},
+			TryInverted = true
 		};
 
 		public QRInput()
@@ -54,10 +55,12 @@ namespace TwoFactorQRCodeReader
 					result = ParseBitmap(bitmap);
 				}
 			}
+#pragma warning disable CA1031 // Do not catch general exception types
 			catch (ExternalException)
 			{
 				// Could not get image from clipboard, ignore it.
 			}
+#pragma warning restore CA1031
 
 			if (result == null)
 			{
