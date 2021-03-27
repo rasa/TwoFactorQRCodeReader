@@ -69,5 +69,6 @@ Bugs can be reported using the issue tracker, for anything else, a discussion fo
 
 Changelog
 ---------
+v0.3 Automatically pad secrets to length divisible by 8 for Base32
 v0.2 Support inverted QR codes (for dark-theme mangled QR codes)
 v0.1 Initial release

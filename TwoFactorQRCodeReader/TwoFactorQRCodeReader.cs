@@ -78,11 +78,11 @@ namespace TwoFactorQRCodeReader
 						switch (parameters["_type"])
 						{
 							case "hotp":
-								CreateField(entry, parameters, "secret", "HmacOtp-Secret-Base32");
+								CreateField(entry, parameters, "secret", "HmacOtp-Secret-Base32", EnsureLength);
 								CreateField(entry, parameters, "counter", "HmacOtp-Counter", s => s ?? "0");
 								break;
 							case "totp":
-								CreateField(entry, parameters, "secret", "TimeOtp-Secret-Base32");
+								CreateField(entry, parameters, "secret", "TimeOtp-Secret-Base32", EnsureLength);
 								CreateField(entry, parameters, "digits", "TimeOtp-Length");
 								CreateField(entry, parameters, "period", "TimeOtp-Period");
 								CreateField(entry, parameters, "algorithm", "TimeOtp-Algorithm", ConvertAlgorithm);
@@ -101,6 +101,15 @@ namespace TwoFactorQRCodeReader
 			{
 				_host.MainWindow.Opacity = initialOpacity;
 			}
+		}
+
+		/// <summary>
+		/// Ensures that the secret is a length that is divisible by 8, padding if necessary
+		/// </summary>
+		private string EnsureLength(string secret)
+		{
+			var requiredPadding = 8 - (secret.Length % 8);
+			return requiredPadding == 8 ? secret : secret + new string('=', requiredPadding);
 		}
 
 		private string ConvertAlgorithm(string urlAlgorithmName)
